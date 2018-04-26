@@ -1,0 +1,406 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="bookmark"  type="image/x-icon"  href="/img/logo.png"/>
+	 <link rel="shortcut icon" href="/img/logo.png">
+	
+			
+    <title>
+    Xraft.Lab
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+
+
+			    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Xraft</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">Homepage</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Categories</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Deep-Learning/">Deep Learning</a></li><li><a class="category-link" href="/categories/学习心得/">学习心得</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Archives</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="archive-link" href="/archives/2018/04/">四月 2018</a></li><li><a class="archive-link" href="/archives/2018/03/">三月 2018</a>
+	                    </ul>
+	        </li>
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="AboutUS">
+		                AboutUS
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="Team">
+		                Team
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="Tags">
+		                Tags
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/Xraft" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://moue2.jsmo.xin/templates/upload/5725/201712/1513668106981.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Face Recognition</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <blockquote>
+<p>作者：Caleb Ge (葛政)<br>邮箱：gezheng121@foxmail.com<br>github主页：<a href="https://github.com/Joker316701882" target="_blank" rel="noopener">https://github.com/Joker316701882</a><br>封面图片地址：<a href="http://www.novumind.com/list/post/268639/" target="_blank" rel="noopener">http://www.novumind.com/list/post/268639/</a></p>
+<p>If any of the images or resources referred in this blog violate your rights, please contact the manager.<br>(博客内图片或其他资源如有侵权，请联系管理员)</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>相信做机器学习或深度学习的同学们回家总会有这样一个烦恼：亲朋好友询问你从事什么工作的时候，如何通俗的解释能避免尴尬？我尝试过很多名词来形容自己的工作：机器学习，深度学习，算法工程师/研究员，搞计算机的，程序员…这些词要么自己觉得不满意，要么对方听不懂。经历无数次失败沟通，最后总结了一个简单实用的答案：“做人脸识别的”。为什么这个答案管用，因为人脸识别在深度学习相关领域的课题中属于商业落地情景多，被普及率广的一项技术，以至于谁说不出几个人脸识别应用，都有那么点落后于时代的意思。今天出这篇人脸识别，是基于我过去三个月在人脸识别方向小小的探索，希望能为非技术从业者提供人脸识别的基本概念（第一部分），以及为人脸识别爱好者和入门人员提供储备知识和实验数据参考（第二、第三部分），也欢迎专业人士提供宝贵的交流意见。</p>
+<p>本文将从接下来三个方面介绍人脸识别，读者可根据自身需求选择性阅读：</p>
+<p>Chapter 1 人脸识别是什么？怎么识别？<br>Chapter 2 科研领域近期进展<br>Chapter 3 实验及细节</p>
+<hr>
+<h2 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h2><h3 id="P1-人脸识别是什么"><a href="#P1-人脸识别是什么" class="headerlink" title="P1. 人脸识别是什么"></a>P1. 人脸识别是什么</h3><p>人脸识别问题宏观上分为两类：1.人脸验证（又叫人脸比对）2.人脸识别</p>
+<p>人脸验证做的是1比1的比对，即判断两张图片里的人是否为同一人。最常见的应用场景便是<strong>人脸解锁</strong>，终端设备（如手机）只需将用户事先注册的照片与临场采集的照片做对比，判断是否为同一人，即可完成身份验证。</p>
+<p>人脸识别做的是1比N的比对，即判断系统当前见到的人，为事先见过的众多人中的哪一个。比如<strong>疑犯追踪，小区门禁，会场签到，以及新零售概念里的客户识别</strong>。这些应用场景的共同特点是：人脸识别系统都事先存储了大量的不同人脸和身份信息，系统运行时需要将见到的人脸与之前存储的大量人脸做比对，找出匹配的人脸。</p>
+<p>两者在早期（2012年~2015年）是通过不同的算法框架来实现的，想同时拥有人脸验证和人脸识别系统，需要分开训练两个神经网络。而2015年Google的<a href="https://arxiv.org/abs/1503.03832" target="_blank" rel="noopener">Facenet</a>论文的发表改变了这一现状，将两者统一到一个框架里。</p>
+<h3 id="P2-人脸识别，怎么识别"><a href="#P2-人脸识别，怎么识别" class="headerlink" title="P2. 人脸识别，怎么识别"></a>P2. 人脸识别，怎么识别</h3><p>这部分只想阐明一个核心思想：<strong>不同人脸由不同特征组成。</strong></p>
+<p>理解这个思想，首先需要引入的的是“特征”的概念。先看下面这个例子：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特征</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">特征1.眼皮</td>
+<td style="text-align:center">单眼皮</td>
+<td style="text-align:center"><strong>双眼皮</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">特征2.鼻子</td>
+<td style="text-align:center">塌鼻梁</td>
+<td style="text-align:center"><strong>挺鼻梁</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">特征3.眼球</td>
+<td style="text-align:center"><strong>蓝色</strong></td>
+<td style="text-align:center">灰色</td>
+</tr>
+<tr>
+<td style="text-align:center">特征4.肤色</td>
+<td style="text-align:center">黄色</td>
+<td style="text-align:center"><strong>白色</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">特征5.发色</td>
+<td style="text-align:center"><strong>棕黄</strong></td>
+<td style="text-align:center">黑色</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>假设这5个特征足够形容一张人脸，那每张人脸都可表示为这5个特征的组合：</p>
+<center>(特征1，特征2，特征3，特征4，特征5)</center>
+
+<p>一位双眼皮，挺鼻梁，蓝眼睛，白皮肤，瓜子脸的欧美系小鲜肉即可用特征表示为（见表格加粗项）：</p>
+<center>(1,1,0,1,0)</center>
+
+<p>那么遍历上面这张特征表格一共可以代表 $2^5=32$ 张不同的脸。32张脸可远远不够覆盖70多亿的人口。为了让不同特征组成的人脸能覆盖足够多人脸，我们需要扩充上面那张特征表。扩张特征表可以从行、列两个角度展开。</p>
+<p>列的角度很简单，只需要增加特征数量：<em>(特征6.脸型,特征7.两眼之间距离，特征8.嘴唇厚薄…)</em>实际应用中通常应用128,256,512或者1024个不同特征，<strong>这么多特征从哪来</strong>，该不会人为一个一个去设计吧？这个问题在后面会解答。</p>
+<p>从行的角度扩充也很好理解，比如“特征3”，除了值0代表蓝色，值1代表灰色，是不是可以增加一个值2代表黑色，值3代表没有头发呢？此外，除了这些离散的整数，我们也可以取连续的小数，比如特征3的值0.1，代表“蓝中略微带黑”，值0.9代表“灰中带蓝”…</p>
+<p>经过这样的扩充，特征空间便会变得无限大。扩充后特征空间里的一张脸可能表示为：</p>
+<center>(0, 1, 0.3, 0.5, 0.1, 2, 2.3, 1.75,...)</center>
+
+<p>之前提出的问题：用于表示人脸的大量特征从哪来？这便是深度学习（深度神经网络）发挥作用的地方。它通过在千万甚至亿级别的人脸数据库上学习训练后，会自动总结出最适合于计算机理解和区分的人脸特征。算法工程师通常需要一定的可视化手段才能知道机器到底学习到了哪些利于区分不同人的特征，当然这部分不是本节重点。</p>
+<p>阐明了<strong>不同人脸由不同特征组成</strong>后，我们便有了足够的知识来分析人脸识别，到底怎么识别。</p>
+<p>现在考虑最简单最理想的情况，用于区分不同人的特征只有两个：特征1和特征2。那么每一张脸都可以表示为一个坐标（特征1，特征2），即特征空间（这个例子里是二维空间）内的一个点。人脸识别基于一个默认成立的假设：<strong>同一个人在不同照片里的脸，在特征空间里非常接近。</strong>为什么这个假设默认成立，设想一下，一个棕色头发的人，在不同光照，遮挡，角度条件下，发色看起来虽然有轻微的区别，但依然与真实颜色非常接近，反应在发色的特征值上，可能是0到0.1之间的浮动。深度学习的另一任务和挑战便是在各种极端复杂的环境条件下，精确的识别各个特征。</p>
+<center><img src="/images/2018-3/kumamoto.png" width="75%" height="75%"></center>
+
+<p>上图是在熊本做大规模人脸数据集去噪演讲时用的ppt，三张山下智久的照片经过神经网络提取出128维的特征后，变成了3个在128维空间中的点（红色），石原里美的特征点为绿色，这张ppt想表达同样的意思：同一人的不通照片提取出的特征，在特征空间里距离很近，不同人的脸在特征空间里相距较远。</p>
+<p>再来考虑人脸识别领域的两个问题：<br>1.人脸验证<br>2.人脸识别</p>
+<p><strong>人脸验证</strong></p>
+<p>比如FaceID人脸解锁，Iphone事先存了一张用户的照片（需要用户注册），这张照片变成了转换成了一连串特征数值（即特征空间里的一个点），用户解锁时，手机只需要对比当前采集到的脸和事先注册的脸在特征空间里的几何距离，如果距离足够近，则判断为同一人，如果距离不够近，则解锁失败。距离阈值的设定，则是算法工程师通过大量实验得到的。</p>
+<p><strong>人脸识别</strong></p>
+<p>同样考虑一个场景，人脸考勤。公司X有员工A,B,C，公司会要求三名员工在入职的时候各提供一张个人照片用于注册在公司系统里，静静地躺在特征空间中。第二天早上员工A上班打卡时，将脸对准考勤机器，系统会把当前员工A的脸放到特征空间里，与之前特征空间里注册好的脸一一对比，发现注册的脸中距离当前采集到的脸最近的特征脸是员工A，打卡完毕。</p>
+<p>知道了人脸识别的基本原理，便能看清它的技术局限。下图展示了一些容易识别失败的案例：</p>
+<center><img src="/images/2018-3/hardfaces.png" width="30%" height="30%"></center>
+
+<p>在光照较差，遮挡，形变（大笑），侧脸等诸多条件下，神经网络很难提取出与“标准脸”相似的特征，异常脸在特征空间里落到错误的位置，导致识别和验证失败。这是现代人脸识别系统的局限，一定程度上也是深度学习（深度神经网络）的局限。面对这种局限，通常采取三种应对措施，使人脸识别系统能正常运作：</p>
+<p>1.工程角度：研发质量模型，对检测到人脸质量进行评价，质量较差则不识别/检验。<br>2.应用角度：施加场景限制，比如刷脸解锁，人脸闸机，会场签到时，都要求用户在良好的光照条件下正对摄像头，以避免采集到质量差的图片。<br>3.算法角度：提升人脸识别模型性能，在训练数据里添加更多复杂场景和质量的照片，以增强模型的抗干扰能力。</p>
+<p>总而言之，人脸识别/深度学习还远未达到人们想象的那般智能。希望各位读者看完第一节后，有能力分辨社交网络，自媒体上的信息真伪，更理性的看待人工智能，给它时间和包容，慢慢成长。</p>
+<p>Preview：<br>下一节将通过论文和开源算法跟进人脸识别领域的前沿研究。仅适合深度学习从业人员继续阅读。</p>
+<hr>
+<h2 id="Chapter-2"><a href="#Chapter-2" class="headerlink" title="Chapter 2"></a>Chapter 2</h2><p>这部分将从两个思路跟进现代人脸识别算法:<br>思路1. Metric Learning: Contrastive Loss, Triplet loss及相关sampling method。<br>思路2. Margin Based Classification: 包含Softmax with Center loss, Sphereface, NormFace, AM-softmax(CosFace)和ArcFace.</p>
+<p><strong>关键字：</strong><br>DeepID2, Facenet, Center loss, Triplet loss, Contrastive Loss, Sampling method, Sphereface, Additive Margin Softmax(CosFace), ArcFace.</p>
+<h3 id="思路1-Metric-Learning"><a href="#思路1-Metric-Learning" class="headerlink" title="思路1: Metric Learning"></a>思路1: Metric Learning</h3><p><strong>Contrastive Loss</strong></p>
+<p>基于深度学习的人脸识别领域最先应用metric learning思想之一的便是DeepID2[2]了，同Chapter 1的思想，“特征”在这篇文章中被称为“DeepID Vector”。DeepID2在同一个网络同时训练verification和classification(即有两个监督信号)。其中verification loss便在特征层引入了Contrastive Loss。Contrastive Loss本质上是使同一个人的照片在特征空间距离足够近，不同人在特征空间里相距足够远直到超过某个阈值m(听起来和triplet loss很像…)。基于这样的insight，DeepID2在训练的时候不是以一张图片为单位了，而是以Image pair为单位，每次输入两张图片，为同一人则verification label为1，不是同一人则label为-1，参数更新思路见下面公式(截自DeepID2论文)：</p>
+<center><img src="/images/2018-3/contrastive_update.png" width="70%" height="70%"></center>
+
+<p>DeepID2在14年是人脸领域非常有影响力的工作，也掀起了在人脸领域引进Metric Learning的浪潮。</p>
+<p><strong>Triplet Loss from Facenet</strong></p>
+<p>这篇15年来自Google的Facenet同样是人脸识别领域的分水岭性工作。不仅仅因为他们成功应用了Triplet loss在benchmark上取得state-of-art的结果，更因为他们提出了一个绝大部分人脸问题的统一解决框架，即：识别、验证、搜索等问题都可以放到特征空间里做，需要专注解决的仅仅是如何将人脸更好的映射到特征空间。为此，Google在DeepID2的基础上，抛弃了分类层即Classification Loss，将Contrastive Loss改进为Triplet Loss,只为了一个目的：学到更好的feature。</p>
+<p>Triplet loss的思想也很简单，输入不再是Image Pair,而是三张图片(Triplet)，分别为Anchor face, negative face和positive face。Anchor与positive face为同一人，与negative face为不同人。那么Triplet loss的损失即可表示为：</p>
+<center><img src="/images/2018-3/tripletloss.png"></center>
+
+<p>直观解释为：在特征空间里anchor与positive的距离要小于anchor与negative的距离超过一个margin alpha。有了良好的人脸特征空间，人脸问题便转换成了Chapter 1末尾形容的那样简单直观。附上一张我制作的Contrastive Loss和Triplet Loss的ppt:</p>
+<center><img src="/images/2018-3/contras_triplet.png" width="80%" height="80%"></center>
+
+<p><strong>Metric Learning的问题</strong></p>
+<p>基于Contrastive loss和Triplet loss的Metric Learning符合人的认知规律，在实际应用中也取得了不错的效果，但是它有非常致命的两个问题，使应用它们的时候犹如pain in ass.</p>
+<p>1.模型需要很很很很很很很很很很很很很很长时间才能拟合(months mentioned in Facenet paper)，contrastive loss和triplet loss的训练样本都基于pair或者triplet的，可能的样本数是O(N<em>2)或者O(N</em>3)的，当训练集很大时，基本不可能遍历到所有可能的样本(或能提供足够梯度额的样本)，所以一般来说需要很长时间拟合。我在10000人，500,000张左右的亚洲数据集上花了近一个月才拟合。<br>2.模型好坏很依赖训练数据的sample方式，理想的sample方式不仅能提升算法最后的性能，更能略微加快训练速度。</p>
+<p>关于这两个问题也有很多学者进行了后续研究，下面的内容作为Metric Learning的延伸阅读，不会很详细。</p>
+<p><strong>Metric Learning延伸阅读</strong></p>
+<p>1.Deep Face Recognition[3]: 为了加速triplet loss的训练，这篇文章先用传统的softmax训练人脸识别模型，因为classficiation信号的强监督特性，模型会很快拟合(通常小于2天，快的话几个小时)。之后移除顶层的classificiation layer，用triplet loss对模型进行特征层finetune，取得了不错的效果。此外这篇论文还发布了人脸数据集Vggface。</p>
+<p>2.In Defense of the Triplet Loss for Person Re-Identification[4]: 这篇文章提出了三个非常有意思的观点。(1)是作者说实验中，平方后的欧几里得距离(Squared Euclidean Distance)表现不如开方后的真实欧几里得距离(Non-squared Euclidean Distance),直白的说就是把下图公式中的平方摘掉。(2)提出了soft-margin损失公式替代原始的triplet loss表达式。(3)引进了batch hard sampling。</p>
+<center><img src="/images/2018-3/tripletloss_nonsquare.png"></center>
+
+<p>3.Sampling Matters in Deep Embedding Learning[5]: 这篇文章提出了两个有价值的点。(1)从导函数角度解释了为什么第2点中提到的non-suqared distance比squared-distance好，并在这个insight基础上提出了Margin Based Loss(本质还是triplet loss的variant,见下图,<em>图片取自原文</em>)。 (2)提出了distance weighted sampling。文章说Facenet中的semi-hard sampling，Deep Face Recognition[3]中的random hard和[4]中提到的batch hard都不能轻易取到会产生大梯度(大loss，即对模型训练有帮助的triplets)，然后从统计学的视角使用了distance weighted sampling method。</p>
+<center><img src="/images/2018-3/samplingmatters.png" width="100%" height="100%"></center>
+
+<p>4.我的实验感想：(1)2,3点中提到的方式在试验中都应用过，直观感受是:soft-margin和margin based loss都比原始的triplet loss好用，但是mairgin based loss实验中更优越。(2)distance weighted sampling method没有明显提升。</p>
+<p>延伸阅读中有提到大家感兴趣的论文，可参考reference查看原文。最后，值得注意的是，triplet loss在行人重识别领域也取得了不错的效果，虽然很可能未来会被Margin Based Classfication打败。</p>
+<h3 id="思路2-Margin-Based-Classification"><a href="#思路2-Margin-Based-Classification" class="headerlink" title="思路2: Margin Based Classification"></a>思路2: Margin Based Classification</h3><p>顾名思义，Margin Based Classficiation不像在feature层直接计算损失的Metric Learning那样，对feature加直观的强限制，而是依然把人脸识别当classfication任务进行训练，通过对softmax公式的改造，间接实现了对feature层施加margin的限制，使网络最后得到的feature更discriminative。这部分先从Sphereface[6]说起。</p>
+<p><strong>Sphereface</strong></p>
+<p>先跟随作者的insight理下思路(图截自原文)：</p>
+<center><img src="/images/2018-3/sphereface_1.png" width="100%" height="100%"></center>
+
+<p>图(a)是用原始softmax损失函数训练出来的特征，图(b)是归一化的特征。不难发现在softmax的特征从角度上来看有latent分布。那么为何不直接去优化角度呢？如果把分类层的<strong>权重归一化</strong>，并且不考虑偏置的话，就得到了改进后的损失函数:</p>
+<center><img src="/images/2018-3/L_modifiied.png" width="40%" height="40%"></center>
+
+<p>不难看出，对于特征x_i，该损失函数优化的方向是使得其向该类别y_i中心靠近，并且远离其他的类别中心。这个目标跟人脸识别目标是一致的，最小化类内距离并且最大化类间距离。然而为了保证人脸比对的正确性，还要保证最大类内距离还要小于最小类间距离。上面的损失函数并不能保证这一点。所以作者引入了margin的思想，这跟triples loss里面引入margin alpha的思想是一致的。那么作者是如何进一步改进上式，引入margin的呢?</p>
+<p>上式红框中是样本特征与类中心的余弦值，我们的目标是缩小样本特征与类中心的角度，即增大这个值。换句话说，如果这个值越小，损失函数值越大，即我们对偏离优化目标的惩罚越大。即就能进一步的缩小类内距离和增大类间距离，达到我们的目标。基于这样的思想最终的损失函数为如下:</p>
+<center><img src="/images/2018-3/L_modified_1.png" width="40%" height="40%"></center>
+
+<p>原始的cos(θ)被换成了phi(θ)，phi(θ)的最简单形式其实是cos(m<em>θ)，之所以在原文中变得复杂，只是为了将定义域扩展到[0,2</em>π]上，并保证在定义域内单调递减。而这个m便是增加的margin系数。当m=1时，phi(θ)等于cos(θ)，当m&gt;1时，phi变小，损失变大。超参m控制着惩罚力度，m越大，惩罚力度越大。为计算方便，m一般设为整数。作者从数学上证明了，m&gt;=3就能保证最大类内距离小于最小类间距离。实现的时候使用倍角公式。</p>
+<p>另外：sphereface的训练很tricky，关于其训练细节，这篇文章并没有提到，而是参考了作者前一篇文章[10]。有关训练细节读者也去作者github上去寻找，issues里面有很多讨论。</p>
+<p><strong>Normface</strong></p>
+<p>Sphereface效果很好，但是它不优美。在测试阶段，sphereface通过特征间的余弦值来衡量相似性，即以角度为相似性的度量。但在训练阶段，不知道读者有没有注意到，其实sphereface的损失函数并不是在直接优化特征与类中心的角度，而是优化特征与类中心的角度在乘上一个特征的长度。就是说，我在上文中关于sphereface损失函数优化方向的表述是不严谨的，其实优化的方向还有一部分是去增大特征的长度去了。我在Mnist数据集上做过实验，以下图片分别为m=1和m=4时的特征可视化，注意坐标的尺度，就能验证上述观点</p>
+<center><img src="/images/2018-3/m1m4.png" width="60%" height="60%"></center>
+
+<p>然而特征的长度在我们使用模型的时候是没有帮助的。这就造成了training跟test之间目标不一致，按照Normface作者原话说就是存在一个gap。于是Normface的核心思想就出来了:为何在训练的时候不把特征也做归一化处理？相应的损失函数如下：</p>
+<center><img src="/images/2018-3/normface.png" width="20%" height="20%"></center>
+
+<p>其中W是归一化的权重，f_i是归一化的特征,两个点积就是角度余弦值。参数s的引入是因为数学上的性质，保证了梯度大小的合理性，原文中有比较直观的解释，这里不是重点。如果没有s训练将无法收敛。关于s的设置，可以把它设为可学习的参数。但是作者更推荐把它当做超参数，其值根据分类类别多少有相应的推荐值，这部分原文appendix里有公式。文章中还有指出一点，Facenet中归一化特征的欧式距离，和余弦距离其实是统一的。还有关于权重与特征的归一化，这篇文章有很多有意思的探讨，有兴趣的读者建议阅读原文。</p>
+<p><strong>AM-softmax[11]/CosFace[12]</strong></p>
+<p>这两篇文章是同一个东西。<br>Normface用特征归一化解决了sphereface训练和测试不一致的问题。但是却没有了margin的意味。AM-softmax可以说是在Normface的基础上引入了margin。直接上损失函数：</p>
+<center><img src="/images/2018-3/amsoftmax.png" width="40%" height="40%"></center>
+
+<p>其中这里的权重和特征都是归一化的。<br>直观上来看，cos(θ)-m比cos(θ)更小，所以损失函数值比Normface里的更大，因此有了margin的感觉。m是一个超参数，控制惩罚的力度，m越大，惩罚越强。作者推荐m=0.35。这里引入margin的方式比Sphereface中的‘温柔’，不仅容易复现，没有很多调参的tricks，效果也很好。</p>
+<p><strong>ArcFace[13]</strong></p>
+<p>与AM-softmax相比，区别在于Arcface引入margin的方式不同，损失函数:</p>
+<center><img src="/images/2018-3/arcloss.png" width="40%" height="40%"></center>
+
+<p>乍一看是不是和AM-softmax一样？注意m是在余弦里面。文章指出基于上式优化得到的特征间的boundary更为优越,具有更强的几何解释。<br>然而这样引入margin是否会有问题？仔细想cos(θ+m)是否一定比cos(θ)小？最后我们用文章中的图来解释这个问题，并且也由此做一个本章margin-based classification部分的总结。</p>
+<p><strong>小结</strong></p>
+<center><img src="/images/2018-3/c2con.png" width="60%" height="60%"></center>
+
+<p>这幅图出自于Arcface，横坐标为θ为特征与类中心的角度，纵坐标为损失函数分子指数部分的值（不考虑s），其值越小损失函数越大。</p>
+<p>看了这么多基于分类的人脸识别论文，相信你也有种感觉，大家似乎都在损失函数上做文章，或者更具体一点，大家都是在讨论如何设计上图的Target logit-θ曲线。这个曲线意味着你要如何优化偏离目标的样本，或者说，根据偏离目标的程度，要给予多大的惩罚。两点总结:</p>
+<p>1.太强的约束不容易泛化。例如Sphereface的损失函数在m=3或4的时候能满足类内最大距离小于类间最小距离的要求。此时损失函数值很大，即target logits很小。但并不意味着能泛化到训练集以外的样本。施加太强的约束反而会降低模型性能，且训练不易收敛。<br>2.选择优化什么样的样本很重要。Arcface文章中指出，给予θ∈[60° , 90°]的样本过多惩罚可能会导致训练不收敛。优化θ ∈ [30° , 60°]的样本可能会提高模型准确率，而过分优化θ∈[0° , 30°]的样本则不会带来明显提升。至于更大角度的样本，偏离目标太远，强行优化很有可能会降低模型性能。这也回答了上一节留下的疑问，上图曲线Arcface后面是上升的，这无关紧要甚至还有好处。因为优化大角度的hard sample可能没有好处。这和FaceNet中对于样本选择的semi-hard策略是一个道理。</p>
+<p><strong>Margin based classification延伸阅读</strong></p>
+<p>1.A discriminative feature learning approach for deep face recognition[14],提出了center loss,加权整合进原始的softmax loss。通过维护一个欧式空间类中心，缩小类内距离，增强特征的discriminative power。<br>2.Large-margin softmax loss for convolutional neural networks[10],Sphereface作者的前一篇文章，未归一化权重，在softmax loss中引入了margin。里面也涉及到Sphereface的训练细节。</p>
+<p>(思路二由陈超撰写。)</p>
+<hr>
+<h2 id="Chapter-3"><a href="#Chapter-3" class="headerlink" title="Chapter 3"></a>Chapter 3</h2><p>基于前两章的知识，我在lfw上取得了99.47%的结果，这个结果训练在Vggface2上，未与lfw去重，也没经历很痛苦的调参过程，算是AM-softmax损失函数直接带来的收益吧！过程中踩了很多坑，这一章将把前段时间的实验结果和心得做一个整理，此外也将回答绝大部分工程师在做人脸识别时最关心的一些问题。やりましょう！</p>
+<blockquote>
+<p>项目github地址：<a href="https://github.com/Joker316701882/Additive-Margin-Softmax" target="_blank" rel="noopener">https://github.com/Joker316701882/Additive-Margin-Softmax</a><br>包含代码可以复现所有实验结果</p>
+</blockquote>
+<p>一个标准的人脸识别系统包含这几个环节：<br>人脸检测及特征点检测-&gt;人脸对齐-&gt;人脸识别</p>
+<p><strong>人脸检测及landmark检测</strong></p>
+<p>目前最流行的人脸及landmark检测是MTCNN[7],但是MTCNN一方面偶尔检测不到face，一方面landmark检测不够精准。这两点都会给后续的对齐和识别带来不利影响。另外在coco loss[8]论文里提到：好的检测和对齐方法，仅用softmax就能达到99.75%，秒杀目前大多数最新论文的结果。coco loss的github issue里提到了更多细节：<a href="https://github.com/sciencefans/coco_loss/issues/9" target="_blank" rel="noopener">https://github.com/sciencefans/coco_loss/issues/9</a> 。此外，因为alignment算法性能的区别，2017年及以后的论文更加注重<strong>相对实验结果</strong>的比较，以排除alignment算法引入的优劣势，方便更直观比较各家的人脸识别算法，lfw上轻松能达到99%以上也是现在更倾向于采用相对结果的原因。</p>
+<p><strong>人脸对齐</strong></p>
+<p>人脸对齐做的是将检测到的脸和landmark通过几何变换，将5官变换到图中相对固定的位置，提供较强的先验。广泛使用的对齐方法为similarity transformation。更多对其变换方法和实验可以参考这篇知乎：<a href="https://zhuanlan.zhihu.com/p/29515986" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/29515986</a> 。我在试验中应用的对齐细节可以参考代码实现：<a href="https://github.com/Joker316701882/Additive-Margin-Softmax/blob/master/align/align_lfw.py" target="_blank" rel="noopener">https://github.com/Joker316701882/Additive-Margin-Softmax/blob/master/align/align_lfw.py</a> 。值得探讨的一个问题是：人脸检测和对齐真的有必要吗？现实应用中常出现人脸landmark无法检测的情况，没有landmark就无法使用similarity transoformation。针对这个问题也有相关研究，通过使用Spatial Transform Network[9]“让网络自己学习alignment”,论文参考 End-to-End Spatial Transform Face Detection and Recognition。这方面的研究进展还不充分，所以实际系统中多数情况下还是使用了detection-&gt;alignment这套流程。</p>
+<p><strong>人脸识别</strong></p>
+<p>可以说人脸识别的项目中绝大部分问题都是人脸检测和对齐的问题。识别模型之间的差距倒没有那么明显。不过训练AM-softmax过程中依然碰到了些值得注意的问题。Spheraface里提出的Resface20(AM-softmax中也同样使用,一模一样复现情况下，lfw上只能达到94%。tensorflow中能拟合的情况为如下配置：</p>
+<blockquote>
+<p>Adam, no weight decay, use batch normalization.</p>
+</blockquote>
+<p>对应原文配置：</p>
+<blockquote>
+<p>Momentum, weight decay, no batch normalization.</p>
+</blockquote>
+<p>以及在实验中发现的：<br>除了Adam以外的任何一个optimizer都达不到理想效果，这可能是不同框架底层实现有所区别的原因，Sphereface,、AM-softmax都是基于caffe，本文所有实验全使用tensorflow，结论有区别也算正常。另一点，sandberg Facenet中的resnet-inception-v1搬过来套用AM-softmax在lfw上的结果达不到97%，这是过程中不太理解的点。从其他论文里看，如果loss选的没问题，那诸如resnet-inception，不同深度的resnet，甚至Mobile-net, Squeezenet等结构的表现也不该有明显差距(AM-softmax的情况下至少也该达到99%)。此外，直接套用Arcface也无法拟合，需要进一步实验。</p>
+<p>最后，关于Sandberg的code中一个值得关注的点，他将train_op定义在了facenet.train()函数里，仔细阅读这个函数会发现，Sandberg的代码中所有网络参数并不是采用每次更新梯度后的值，而是采用滑动平均值作为网络实际的参数值！也正是因为这个原因，解释了sandberg在batch_norm的参数configuration中(见下图，截取自<a href="https://github.com/davidsandberg/facenet/blob/master/src/models/inception_resnet_v1.py" target="_blank" rel="noopener">https://github.com/davidsandberg/facenet/blob/master/src/models/inception_resnet_v1.py</a> )，甚至没把”is_training”的值交给placeholder,而是默认train和test时都采用local statistics的模式。如果不是因为所有参数都用了滑动平均，那么这种使用batch_norm的做法其实是错误的。Sandberg这样实现的好坏只能交给实验结果来评判了。如果想正常使用网络参数，和batch norm，而不是用滑动平均参数和全程开着”is_training”,只需要将facenet.train()函数替换成普通的Optimizer,然后将batch_norm的”is_training”交给placeholder处理，详细可以参考我的AM-softmax实现。</p>
+<center><img src="/images/2018-3/sand_batch_norm.png" width="60%" height="60%"></center>
+
+<p>感谢大家坚持阅读到最后，以tensorboard的plot作为结尾吧！</p>
+<center><img src="https://raw.githubusercontent.com/Joker316701882/Additive-Margin-Softmax/master/tfboard/lfw_acc.png"></center>
+
+
+<p><strong>Reference:</strong><br>[1] F. Schroff, D. Kalenichenko, and J. Philbin. Facenet: A unified embedding for face recognition and clustering. In Proc. CVPR, 2015.<br>[2] Y. Sun, X. Wang, and X. Tang. Deep learning face representation by joint identification-verification. CoRR, abs/1406.4773, 2014.<br>[3] O. M. Parkhi, A. Vedaldi, and A. Zisserman. Deep face recognition. In BMVC, 2015<br>[4] A. Hermans, L. Beyer, and B. Leibe. In defense of the triplet loss for person re-identification. arXiv preprint arXiv:1703.07737, 2017<br>[5] Wu, C. Manmatha, R. Smola, A. J. and Krahenb uhl, P. 2017. Sampling matters in deep embedding learning. arXiv preprint arXiv:1706.07567<br>[6] W. Liu, Y. Wen, Z. Yu, M. Li, B. Raj, and L. Song. Sphereface: Deep hypersphere embedding for face recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition, 2017<br>[7] Zhang, K., Zhang, Z., Li, Z., Qiao, Y.: Joint face detection and alignment using multi-task cascaded convolutional networks. arXiv preprint, 2016<br>[8] Yu Liu, Hongyang Li, and Xiaogang Wang. 2017. Learning Deep Features via Congenerous Cosine Loss for Person Recognition. arXiv preprint arXiv:1702.06890, 2017<br>[9] M. Jaderberg, K. Simonyan, A. Zisserman, and K. Kavukcuoglu. Spatial transformer networks. In NIPS, 2015.<br>[10] W. Liu, Y. Wen, Z. Yu, and M. Yang. Large-margin softmax loss for convolutional neural networks. In ICML, 2016.<br>[11] F. Wang, W. Liu, H. Liu, and J. Cheng. Additive margin softmax for face verification. In arXiv:1801.05599, 2018.<br>[12] CosFace: Large Margin Cosine Loss for Deep Face Recognition<br>[13] Deng, J., Guo, J., Zafeiriou, S.: Arcface: Additive angular margin loss for deep face recognition. In: Arxiv preprint. 2018<br>[14] Y. Wen, K. Zhang, Z. Li, and Y. Qiao. A discriminative feature learning approach for deep face recognition. In ECCV, 2016.<br>[15] Y. Liu, H. Li, and X. Wang. Rethinking feature discrimination and polymerization for large-scale recognition. arXiv:1710.00870, 2017.</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">Comments评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xraft'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/03/21/FaceRecognition/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/03/21/FaceRecognition/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//xraft.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+
+
+
+
+ 	
+</html>
